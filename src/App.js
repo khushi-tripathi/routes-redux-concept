@@ -42,15 +42,18 @@ function App() {
           path: "contact",
           element: <Contact />,
         },
-
         {
           path: "blogs",
-          element: <Blog />,
-        },
-
-        {
-          path: "blogs/:id",
-          element: <BlogContent />,
+          children: [
+            {
+              index: true,
+              element: <Blog />,
+            },
+            {
+              path: ":id",
+              element: <BlogContent />,
+            },
+          ],
         },
       ],
     },
