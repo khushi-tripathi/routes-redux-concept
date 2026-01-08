@@ -1,5 +1,9 @@
 import "./App.css";
-import { createBrowserRouter } from "react-router";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+} from "react-router";
 // import {  } from "react-router/dom";
 import Home from "./pages.js/Home";
 import About from "./pages.js/About";
@@ -7,26 +11,34 @@ import Contact from "./pages.js/Contact";
 import { RouterProvider } from "react-router/dom";
 
 function App() {
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Home />,
-    },
-    {
-      path: "/about",
-      element: <About />,
-    },
-    {
-      path: "/contact",
-      element: <Contact />,
-    },
-  ]);
+  // another way to do the same thing means create routes with the help of routes.
+  const routes = createRoutesFromElements(
+    <>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
+    </>
+  );
+  const router = createBrowserRouter(routes);
+
+  // creating route directly
+  // const router = createBrowserRouter([
+  //   {
+  //     path: "/",
+  //     element: <Home />,
+  //   },
+  //   {
+  //     path: "/about",
+  //     element: <About />,
+  //   },
+  //   {
+  //     path: "/contact",
+  //     element: <Contact />,
+  //   },
+  // ]);
   return (
     <>
       <RouterProvider router={router} />
-      <div className="App">
-        <h1>Routing </h1>
-      </div>
     </>
   );
 }
