@@ -15,6 +15,7 @@ import DummyAbout from "./pages.js/DummyAbout";
 import DummyContact from "./pages.js/DummyContact";
 import Blog from "./Components/Blogs/Blog";
 import BlogContent from "./Components/Blogs/BlogContent";
+import ErrorPage from "./pages.js/ErrorPage";
 
 function App() {
   // another way to do the same thing means create routes with the help of routes.
@@ -32,6 +33,7 @@ function App() {
     {
       path: "/root",
       element: <NavBar />,
+      errorElement: <ErrorPage />,
       children: [
         { index: true, element: <Home /> }, // we can see navbar and home has same '/' path so instead of this we can use index true which means it will go to parent route
         {

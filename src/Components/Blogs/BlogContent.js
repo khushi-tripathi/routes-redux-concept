@@ -6,6 +6,7 @@ function BlogContent() {
   console.log("Params : ", params);
   return (
     <>
+      {params.id === "blog-3" && new Error()}
       <h1>Blog Content</h1>
       <h2>{params.id}</h2>
     </>
