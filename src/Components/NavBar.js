@@ -11,7 +11,7 @@ function NavBar() {
           style={({ isActive }) =>
             isActive ? { color: "white", fontWeight: "bold" } : undefined
           }
-          to="/"
+          to=""
         >
           Home
         </NavLink>
@@ -19,7 +19,7 @@ function NavBar() {
           style={({ isActive }) =>
             isActive ? { color: "white", fontWeight: "bold" } : undefined
           }
-          to="/about"
+          to="about"
         >
           About
         </NavLink>
@@ -27,7 +27,7 @@ function NavBar() {
           style={({ isActive }) =>
             isActive ? { color: "white", fontWeight: "bold" } : undefined
           }
-          to="/contact"
+          to="contact"
         >
           Contact
         </NavLink>
