@@ -11,6 +11,8 @@ import About from "./pages.js/About";
 import Contact from "./pages.js/Contact";
 import { RouterProvider } from "react-router/dom";
 import NavBar from "./Components/NavBar";
+import DummyAbout from "./pages.js/DummyAbout";
+import DummyContact from "./pages.js/DummyContact";
 
 function App() {
   // another way to do the same thing means create routes with the help of routes.
@@ -37,6 +39,21 @@ function App() {
         {
           path: "/contact",
           element: <Contact />,
+        },
+      ],
+    },
+    // if parent path has some value then childre path also start with parent path then add /(children path). If we are not include the parent path then it will give error.
+    {
+      path: "/dummy",
+      element: <NavBar />,
+      children: [
+        {
+          path: "/dummy/about",
+          element: <DummyAbout />,
+        },
+        {
+          path: "/dummy/contact",
+          element: <DummyContact />,
         },
       ],
     },
