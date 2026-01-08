@@ -3,8 +3,7 @@ import React from "react";
 function Home() {
   return (
     <>
-      <NavBar />
-      <div>Home</div>;
+      <div>Home</div>
     </>
   );
 }

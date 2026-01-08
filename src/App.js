@@ -27,22 +27,22 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Home />,
-    },
-    {
-      path: "/about",
-      element: <About />,
-    },
-    {
-      path: "/contact",
-      element: <Contact />,
+      element: <NavBar />,
+      children: [
+        { index: true, element: <Home /> }, // we can see navbar and home has same '/' path so instead of this we can use index true which means it will go to parent route
+        {
+          path: "/about",
+          element: <About />,
+        },
+        {
+          path: "/contact",
+          element: <Contact />,
+        },
+      ],
     },
   ]);
   return (
     <>
-      {/* <BrowserRouter>
-        <NavBar />
-      </BrowserRouter> */}
       <RouterProvider router={router} />
     </>
   );
