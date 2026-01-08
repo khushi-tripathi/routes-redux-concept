@@ -43,20 +43,20 @@ function App() {
       ],
     },
     // if parent path has some value then childre path also start with parent path then add /(children path). If we are not include the parent path then it will give error.
-    {
-      path: "/dummy",
-      element: <NavBar />,
-      children: [
-        {
-          path: "/dummy/about",
-          element: <DummyAbout />,
-        },
-        {
-          path: "/dummy/contact",
-          element: <DummyContact />,
-        },
-      ],
-    },
+    // {
+    //   path: "/dummy",
+    //   element: <NavBar />,
+    //   children: [
+    //     {
+    //       path: "/dummy/about",
+    //       element: <DummyAbout />,
+    //     },
+    //     {
+    //       path: "/dummy/contact",
+    //       element: <DummyContact />,
+    //     },
+    //   ],
+    // },
   ]);
   return (
     <>
