@@ -13,6 +13,8 @@ import { RouterProvider } from "react-router/dom";
 import NavBar from "./Components/NavBar";
 import DummyAbout from "./pages.js/DummyAbout";
 import DummyContact from "./pages.js/DummyContact";
+import Blog from "./Components/Blogs/Blog";
+import BlogContent from "./Components/Blogs/BlogContent";
 
 function App() {
   // another way to do the same thing means create routes with the help of routes.
@@ -39,6 +41,16 @@ function App() {
         {
           path: "contact",
           element: <Contact />,
+        },
+
+        {
+          path: "blogs",
+          element: <Blog />,
+        },
+
+        {
+          path: "blogs/:id",
+          element: <BlogContent />,
         },
       ],
     },

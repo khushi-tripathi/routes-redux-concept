@@ -31,6 +31,15 @@ function NavBar() {
         >
           Contact
         </NavLink>
+
+        <NavLink
+          style={({ isActive }) =>
+            isActive ? { color: "white", fontWeight: "bold" } : undefined
+          }
+          to="blogs"
+        >
+          Blogs
+        </NavLink>
       </div>
       <Outlet />
     </>
