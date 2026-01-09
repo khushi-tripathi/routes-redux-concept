@@ -4,6 +4,12 @@ import { NavLink, Outlet } from "react-router";
 // NavLink is just a modifed version of Link, this has properties link isActive , etc to beautify link. MAinly used to visible links on the aplication.
 
 function NavBar() {
+  // Some data which we need to pass to the children path component ...
+  const data = {
+    name: "Khushi Tripathi",
+    designation: "Software Engineer",
+    company: "Netlink",
+  };
   return (
     <>
       <div className="nav">
@@ -41,7 +47,7 @@ function NavBar() {
           Blogs
         </NavLink>
       </div>
-      <Outlet />
+      <Outlet context={data} />
     </>
   );
 }
