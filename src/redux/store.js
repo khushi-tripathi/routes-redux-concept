@@ -1,6 +1,12 @@
 // import redux from "redux";
 
-import { createStore } from "redux";
+import { combineReducers, createStore } from "redux";
 import { todoReducer } from "./reducers/todoReducer";
+import { blogReducer } from "./reducers/blogReducer";
 
-export const store = createStore(todoReducer);
+const reducers = combineReducers({
+  todoReducer,
+  blogReducer,
+});
+
+export const store = createStore(reducers);

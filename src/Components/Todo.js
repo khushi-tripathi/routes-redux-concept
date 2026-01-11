@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addTodo, setTodoStatus } from "../redux/actions/todoActions";
 
 function Todo() {
-  const todos = useSelector((state) => state.todos);
+  const todos = useSelector((state) => state?.todoReducer?.todos);
   const dispatch = useDispatch();
   console.log("data selectors : ", todos);
   //   const [todos, setTodos] = useState([]);
