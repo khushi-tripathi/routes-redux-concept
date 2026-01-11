@@ -10,9 +10,10 @@ export const addTodo = (todo) => {
     todo,
   };
 };
-export const setTodoStatus = (index) => {
+// index and status value
+export const setTodoStatus = (todo) => {
   return {
     type: SET_TODO_STATUS,
-    index,
+    todo,
   };
 };
