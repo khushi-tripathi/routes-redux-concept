@@ -37,6 +37,7 @@ const todoSlice = createSlice({
 
 export const todoReducer = todoSlice.reducer;
 export const todoActions = todoSlice.actions;
+export const todoSelector = (state) => state?.todoReducer?.todos;
 
 // export function todoReducer(state = initialState, action) {
 //   switch (action.type) {

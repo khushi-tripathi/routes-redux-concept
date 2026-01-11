@@ -17,6 +17,7 @@ const blogSlice = createSlice({
 
 export const blogReducer = blogSlice.reducer;
 export const blogActions = blogSlice.actions;
+export const blogSelector = (state) => state?.blogReducer?.blogs;
 
 // export function blogReducer(state = initialState, action) {
 //   switch (action.type) {

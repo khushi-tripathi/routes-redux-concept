@@ -5,7 +5,7 @@ import { blogActions } from "../../redux/reducers/blogReducer";
 // import { addBlog } from "../../redux/actions/blogActions";
 
 function Blog() {
-  const blogs = useSelector((state) => state?.blogReducer?.blogs);
+  const blogs = useSelector(blogSelector);
   const dispatch = useDispatch();
 
   const [blog, setBlog] = useState("");
