@@ -17,6 +17,8 @@ import Blog from "./Components/Blogs/Blog";
 import BlogContent from "./Components/Blogs/BlogContent";
 import ErrorPage from "./pages.js/ErrorPage";
 import Todo from "./Components/Todo";
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
 
 function App() {
   // another way to do the same thing means create routes with the help of routes.
@@ -84,7 +86,9 @@ function App() {
   ]);
   return (
     <>
-      <RouterProvider router={router} />
+      <Provider store={store}>
+        <RouterProvider router={router} />
+      </Provider>
     </>
   );
 }
