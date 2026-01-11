@@ -16,6 +16,7 @@ import DummyContact from "./pages.js/DummyContact";
 import Blog from "./Components/Blogs/Blog";
 import BlogContent from "./Components/Blogs/BlogContent";
 import ErrorPage from "./pages.js/ErrorPage";
+import Todo from "./Components/Todo";
 
 function App() {
   // another way to do the same thing means create routes with the help of routes.
@@ -29,6 +30,7 @@ function App() {
   // const router = createBrowserRouter(routes);
 
   // creating route directly
+
   const router = createBrowserRouter([
     {
       path: "/root",
@@ -56,6 +58,11 @@ function App() {
               element: <BlogContent />,
             },
           ],
+        },
+
+        {
+          path: "todos",
+          element: <Todo />,
         },
       ],
     },

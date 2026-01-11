@@ -46,6 +46,15 @@ function NavBar() {
         >
           Blogs
         </NavLink>
+
+        <NavLink
+          style={({ isActive }) =>
+            isActive ? { color: "white", fontWeight: "bold" } : undefined
+          }
+          to="todos"
+        >
+          TODO List
+        </NavLink>
       </div>
       <Outlet context={data} />
     </>

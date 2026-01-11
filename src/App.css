@@ -45,3 +45,11 @@
   width: 100%;
   background-color: cadetblue;
 }
+
+.todo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
