@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addTodo, setTodoStatus } from "../redux/actions/todoActions";
+import { todoActions } from "../redux/reducers/todoReducer";
 
 function Todo() {
   const todos = useSelector((state) => state?.todoReducer?.todos);
@@ -17,7 +18,8 @@ function Todo() {
   };
 
   const add = () => {
-    dispatch(addTodo(todo));
+    // dispatch(addTodo(todo));
+    dispatch(todoActions.addTodoToolkit(todo));
     // setTodos([...todos, { ...todo }]);
     setTodo({});
   };
@@ -29,7 +31,8 @@ function Todo() {
         ...currentTodoList[idx],
         status: value,
       };
-      dispatch(setTodoStatus({ idx, status: value }));
+      dispatch(todoActions.setStatusTodoToolkit({ idx, status: value }));
+      //   dispatch(setTodoStatus({ idx, status: value }));
       //   setTodos(currentTodoList);
     };
   };

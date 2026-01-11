@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useOutletContext } from "react-router";
-import { addBlog } from "../../redux/actions/blogActions";
+import { blogActions } from "../../redux/reducers/blogReducer";
+// import { addBlog } from "../../redux/actions/blogActions";
 
 function Blog() {
   const blogs = useSelector((state) => state?.blogReducer?.blogs);
@@ -13,8 +14,15 @@ function Blog() {
   const data = useOutletContext();
   console.log("DATA OUTLET :: ", data);
   const submitBlog = () => {
+    // dispatch(
+    //   addBlog({
+    //     idx: blogs?.length,
+    //     blog,
+    //   })
+    // );
+
     dispatch(
-      addBlog({
+      blogActions.addBlogToolkit({
         idx: blogs?.length,
         blog,
       })
