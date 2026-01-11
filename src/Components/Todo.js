@@ -1,7 +1,12 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addTodo, setTodoStatus } from "../redux/actions/todoActions";
 
 function Todo() {
-  const [todos, setTodos] = useState([]);
+  const todos = useSelector((state) => state.todos);
+  const dispatch = useDispatch();
+  console.log("data selectors : ", todos);
+  //   const [todos, setTodos] = useState([]);
   const [todo, setTodo] = useState({});
   const onChangeTodo = (e) => {
     setTodo({
@@ -11,8 +16,9 @@ function Todo() {
     });
   };
 
-  const addTodo = () => {
-    setTodos([...todos, { ...todo }]);
+  const add = () => {
+    dispatch(addTodo(todo));
+    // setTodos([...todos, { ...todo }]);
     setTodo({});
   };
 
@@ -23,15 +29,14 @@ function Todo() {
         ...currentTodoList[idx],
         status: value,
       };
-      debugger;
-      setTodos(currentTodoList);
+      dispatch(setTodoStatus({ idx, status: value }));
+      //   setTodos(currentTodoList);
     };
   };
 
   return (
     <div className="todo">
       <div>Todo List -- </div>
-      {/* <div className="input-section"> */}
       <textarea
         className="textarea"
         rows={4}
@@ -41,14 +46,10 @@ function Todo() {
         onChange={onChangeTodo}
         value={todo?.content || ""}
       />
-      <button onClick={addTodo}> Add TODO </button>
-      {/* </div> */}
-
+      <button onClick={add}> Add TODO </button>
       <div className="display-todo">
         {todos?.length ? <h2> Available TODOS</h2> : null}
-
         <hr />
-
         {todos.map((item, idx) => {
           return (
             <div key={idx}>

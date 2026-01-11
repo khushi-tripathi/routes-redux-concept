@@ -1,11 +1,9 @@
 import "./App.css";
 import {
-  BrowserRouter,
   createBrowserRouter,
   createRoutesFromElements,
   Route,
 } from "react-router";
-// import {  } from "react-router/dom";
 import Home from "./pages.js/Home";
 import About from "./pages.js/About";
 import Contact from "./pages.js/Contact";
